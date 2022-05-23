@@ -20,7 +20,7 @@ export function subscribe(onMessage = (_message) => {}) {
   const resp = client
     .from('messages')
     .on('*', (message) => {
-      // console.log('check', message.new);
+      // console.log('check', message);
       onMessage(message.new);
     })
     .subscribe();
